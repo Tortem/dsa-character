@@ -10,7 +10,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import com.dsacharacter.model.DSACharacter
-import com.dsacharacter.theme.TestTheme
+import com.dsacharacter.theme.CustomTestTheme
 
 // this is the main activity
 // it shows a list of all available characters
@@ -22,7 +22,7 @@ class MainActivity : ComponentActivity() {
 
         // set the content of the activity to the CharacterList composable
         setContent {
-            TestTheme {
+            CustomTestTheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
                     MainView()
                 }
@@ -35,7 +35,7 @@ class MainActivity : ComponentActivity() {
 fun MainView() {
     val selectedCharacter = remember {mutableStateOf(DSACharacter())}
 
-    if (selectedCharacter.value.name == "") {
+    if (selectedCharacter.value.name.isEmpty()) {
         CharacterList(onCharacterSelection = { character ->
             selectedCharacter.value = character
         })

@@ -13,7 +13,12 @@ import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
 import androidx.core.view.WindowCompat
+import com.dsacharacter.R
+
+val genBasRfont = FontFamily(Font(resId = R.font.genbasr))
 
 private val DarkColorScheme = darkColorScheme(
     primary = Purple80,
